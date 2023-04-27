@@ -1,0 +1,198 @@
+// Imports
+@import 'vars';
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $white-color;
+  background-color: $black-color;
+}
+
+// Container
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  color: $black-color;
+  border-radius: 32px;
+  background-color: $white-color;
+
+  & h1 {
+    margin-bottom: -0.2em;
+    font-size: 4rem;
+  }
+
+  & h2 {
+    margin: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 4px solid $black-color;
+    text-transform: uppercase;
+  }
+
+  & .add-todo,
+  & .todos,
+  & .completed-todo {
+    width: 600px;
+  }
+
+  // Add item
+  & .add-todo {
+
+    & form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & input {
+        padding: 0.5rem;
+        width: 90%;
+        border: 1px solid $gray-color;
+        background: transparent;
+        transition: $transition-300;
+
+        &:focus {
+          outline: 1px solid $gray-color;
+          border: 1px solid $gray-color;
+          border-radius: 12px;
+        }
+
+        &::placeholder {
+          color: $gray-color;
+          font-size: 0.8rem;
+          font-style: italic;
+        }
+      }
+
+      & button {
+        cursor: pointer;
+        padding: 0.5rem;
+        width: 50px;
+        border: none;
+        color: $gray-color;
+        font-weight: 600;
+        background: transparent;
+        transition: $transition-400;
+
+        &:hover {
+          color: $green-color;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+
+  // Todos
+  .todos {
+
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      & li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 0;
+        padding-bottom: 3px;
+        border-bottom: 1px solid $black-color;
+      }
+    }
+  }
+
+  & .actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+
+    & .actions-buttons {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      color: $black-color;
+      border: none;
+      font-size: 1.5rem;
+      background: transparent;
+      transition: $transition-400;
+
+      &:hover #edit-icon {
+        padding: 4px;
+        color: white;
+        border-radius: 12px;
+        transform: scale(1.5);
+        background-color: $black-color;
+      }
+
+      &:hover #done-icon {
+        padding: 4px;
+        color: white;
+        border-radius: 12px;
+        transform: scale(1.5);
+        background-color: $green-color;
+      }
+
+      &:hover #delete-icon {
+        padding: 4px;
+        color: white;
+        border-radius: 12px;
+        transform: scale(1.5);
+        background-color: $red-color;
+      }
+    }
+  }
+
+  // Completed todos
+  .completed-todo {
+
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      & li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 0;
+        padding-bottom: 3px;
+        border-bottom: 1px solid $black-color;
+      }
+    }
+  }
+
+  & .actions-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 130px;
+
+    & .actions-buttons {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      color: $black-color;
+      border: none;
+      font-size: 1.5rem;
+      background: transparent;
+      transition: $transition-400;
+    }
+  }
+}
